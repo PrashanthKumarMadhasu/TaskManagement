@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Set up the API base URL and enable withCredentials for cookie-based sessions.
 const API = axios.create({
-  baseURL: "http://localhost:5000/api", // Updated base URL to handle both auth and tasks routes
+  baseURL: "https://taskmanagement-euar.onrender.com", // Updated base URL to handle both auth and tasks routes
   withCredentials: true, // This ensures cookies (like JWT) are sent with requests
 });
 
