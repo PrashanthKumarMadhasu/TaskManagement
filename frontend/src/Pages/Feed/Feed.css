@@ -1,0 +1,163 @@
+/* Feed.css */
+
+/* Feed page container */
+.feed-page {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    overflow-y: scroll;
+    
+  }
+  
+  /* Post form container */
+  .post-container {
+    width: 40%;
+    margin-bottom: 10px; /* Space between the form and posts */
+    display: flex;
+    justify-content: center;
+    min-width: 500px;
+  }
+  
+  /* Form container */
+  .form-container {
+    width: 100%;
+    padding: 0 20px 10px 20px;
+    border-radius: 8px;
+    background-color: rgb(2, 22, 41);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Form title */
+  .form-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #b8cbde;
+    text-align: center;
+  }
+  
+  /* Input field container */
+  .form-input {
+    display: flex;
+    margin-bottom: 16px;
+    background-color: rgb(20, 48, 59);
+  }
+  
+  /* Text input field */
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    border:2px solid rgb(88, 87, 87);
+    border-radius: 5px;
+    font-size: 18px;
+    color: beige;
+    background-color: rgb(20, 48, 59);
+    outline: none;
+  }
+  .input-field::placeholder{
+    color: #b9b4b4;
+  }
+  /* File input field */
+  .file-input {
+    width: 100%;
+    padding: 10px;
+    border:2px solid rgb(88, 87, 87);
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: rgb(20, 48, 59);
+    color: #8b8282;
+  }
+
+  /* Submit button */
+  .submit-button {
+    padding: 5px 15px;
+    background-color: rgb(38, 90, 233);
+    color: aliceblue;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .button-container{
+    display: flex;
+    width:100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .submit-button:hover{
+    color: rgb(38, 90, 233);
+    background-color: aliceblue;
+  }
+  
+  .submit-button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  /* Posts container (grid layout for posts) */
+  .feed-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 3 items per row */
+    gap: 20px;
+    width: 100%;
+    overflow-x: auto; /* Make the container scrollable if content overflows */
+    padding: 10px;
+    align-items: center;
+  }
+  
+  /* Individual post card */
+  .post-card {
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    text-align: center;
+    overflow: hidden;
+    max-width: 250px;
+    height: 300px; /* Fixed height for the cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Post image */
+  .post-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+  }
+  
+  /* Post caption */
+  .post-caption {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  /* Post user information */
+  .post-user {
+    font-size: 14px;
+    color: #555;
+    margin-top: auto;
+  }
+  
+  @media (max-width:980px ) {
+    
+    .feed-container {
+        grid-template-columns: repeat(3, 1fr); 
+      }
+  }
+  @media (max-width:700px ) {
+    
+    .feed-container {
+        grid-template-columns: repeat(2, 1fr); 
+        
+      }
+  }

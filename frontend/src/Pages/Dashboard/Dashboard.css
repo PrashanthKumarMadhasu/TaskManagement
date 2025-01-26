@@ -1,0 +1,118 @@
+.task-container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(2, 22, 41);
+    border-radius: 20px;
+    padding: 20px 50px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .task-name-field{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .task-input-field{
+    width: 70%;
+    padding: 5px 15px;
+    border:2px solid rgb(88, 87, 87);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: border-color 0.3s ease;
+    background-color: rgb(20, 48, 59);
+  }
+  
+  
+  .clear-icon{
+    color:#b6a2a2;
+    font-size: 24px;
+  }
+  .clear-icon.filled{
+    color:#fff;
+    font-weight: 800;
+  }
+  .task-input-field input{
+    width: 100%;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    color: beige;
+    background-color: rgb(20, 48, 59);
+  }
+  .task-input-field input::placeholder {
+    color: #b9b4b4; 
+  }
+
+  .status-dropdown{
+    padding: 5px 15px;
+    border:2px solid rgb(88, 87, 87);
+    border-radius: 5px;
+    color: beige;
+    background-color: rgb(20, 48, 59);
+    font-size: 18px;
+  }
+
+  .status-dropdown option{
+    background-color: rgba(11, 39, 66, 0.342);
+    color:rgb(237, 241, 243);
+    outline: none;
+  }
+  
+  .task-description-field{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .description-field{
+    width: 70%;
+    padding: 5px 15px;
+    border:2px solid rgb(88, 87, 87);
+    border-radius: 5px;
+    display: flex;
+    transition: border-color 0.3s ease;
+    background-color:  rgb(20, 48, 59);
+  }
+
+  .description-input-field{
+    width:100%;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    color: beige;
+    background-color:  rgb(20, 48, 59);
+  }
+  .description-input-field::placeholder{
+    color: #b9b4b4; 
+  }
+  .add-button{
+    padding: 5px 15px;
+    border:none;
+    border-radius: 5px;
+    color: aliceblue;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: rgb(38, 90, 233);
+    cursor: pointer;
+  }
+
+  .add-button:hover{
+    color: rgb(38, 90, 233);
+    background-color: aliceblue;
+  }
+  .status-container{
+    height:800px;
+    width: 100%;
+  }
+
+  
