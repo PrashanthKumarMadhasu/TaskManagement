@@ -12,17 +12,17 @@ const register = async (req, res) => {
 
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
-
+    
     const user = new User({
       name,
       email,
       password: hashedPassword
     });
-
+    const token = generateToken(user._id);
     await user.save();
-    res.status(201).json({ message: 'User registered successfully', user });
+    res.status(201).json({success:true, message: 'User registered successfully', user ,token});
   } catch (err) {
-    res.status(500).json({ message: 'Error registering user', error: err.message });
+    res.status(500).json({success:false, message: 'Error registering user', error: err.message });
   }
 };
 
@@ -42,7 +42,8 @@ const login = async (req, res) => {
     const token = generateToken(user._id);
 
     // Respond with the token and user details
-    res.json({
+    res.status(200).json({
+      success:true,
       message: 'Login successful',
       token,
       user: {
@@ -52,7 +53,7 @@ const login = async (req, res) => {
       },
     });
   } catch (err) {
-    res.status(500).json({ message: 'Error logging in', error: err.message });
+    res.status(500).json({ success:false, message: 'Error logging in', error: err.message });
   }
 };
 
