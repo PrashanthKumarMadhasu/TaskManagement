@@ -42,14 +42,13 @@ const StatusColumn = styled.div`
   flex: 1;
   min-width: 300px;
   max-width:300px;
-  background-color: #f4f4f4;
   border-radius: 8px;
   padding: 16px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 10px;
   display: flex;
   flex-direction: column;
-  justify-content:center;
+  justify-content:start;
   align-items: center;
 `;
 
@@ -217,8 +216,8 @@ const Dashboard = () => {
             ) : (
               <CardWrapper>
                 {/* Pending Column */}
-                <StatusColumn>
-                  <h3>Pending</h3>
+                <StatusColumn style={{ backgroundColor: "rgba(236, 143, 143, 0.92)" }}>
+                  <h3 className="column-header">Pending</h3>
                   <Droppable droppableId="pending">
                     {(provided) => (
                       <div
@@ -229,7 +228,7 @@ const Dashboard = () => {
                           padding: "16px", // Add padding here
                           minHeight: "250px",
                           minWidth:"300px",
-                          backgroundColor:"red" // Optional: Ensure the droppable area is visible even when empty
+                          backgroundColor:"" // Optional: Ensure the droppable area is visible even when empty
                         }}
                       >
                         {taskData
@@ -241,7 +240,7 @@ const Dashboard = () => {
                               key={task._id}
                             >
                               {(provided) => (
-                                <div
+                                <div 
                                   ref={provided.innerRef}
                                   {...provided.draggableProps}
                                   {...provided.dragHandleProps}
@@ -264,8 +263,8 @@ const Dashboard = () => {
                 </StatusColumn>
 
                 {/* Completed Column */}
-                <StatusColumn>
-                  <h3>Completed</h3>
+                <StatusColumn style={{ backgroundColor: "rgba(236, 235, 172, 0.92)" }}>
+                  <h3 className="column-header">Completed</h3>
                   <Droppable droppableId="completed">
                     {(provided) => (
                       <div
@@ -276,7 +275,7 @@ const Dashboard = () => {
                           padding: "16px", // Add padding here
                           minHeight: "250px",
                           minWidth:"300px",
-                          backgroundColor:"yellow" // Optional: Ensure the droppable area is visible even when empty
+                          backgroundColor:"" // Optional: Ensure the droppable area is visible even when empty
                         }}
                       >
                         {taskData
@@ -311,8 +310,8 @@ const Dashboard = () => {
                 </StatusColumn>
 
                 {/* Done Column */}
-                <StatusColumn>
-                  <h3>Done</h3>
+                <StatusColumn style={{ backgroundColor: "rgba(158, 219, 140, 0.92)" }}>
+                  <h3 className="column-header">Done</h3>
                   <Droppable droppableId="done">
                     {(provided) => (
                       <div
@@ -323,7 +322,7 @@ const Dashboard = () => {
                           padding: "16px", // Add padding here
                           minHeight: "250px",
                           minWidth:"300px",
-                          backgroundColor:"blue" // Optional: Ensure the droppable area is visible even when empty
+                          backgroundColor:"" // Optional: Ensure the droppable area is visible even when empty
                         }}
                       >
                         {taskData

@@ -9,10 +9,11 @@ const Card = styled.div`
   background-color: ${({ theme }) => theme.card_background};
   border: 1px solid ${({ theme }) => theme.text_secondary};
   border-radius: 14px;
-  box-shadow: 1px 6px 20px 0px ${({ theme }) => theme.primary + 15};
+  box-shadow: 1px 3px 10px 0px #000;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-bottom:3px;
   position: relative;
   @media (max-width: 600px) {
     padding: 12px 14px;
@@ -24,13 +25,13 @@ const Card = styled.div`
 
 const Title = styled.h3`
   font-size: 18px;
-  color: ${({ theme }) => theme.text_primary};
+  color: rgb(10, 65, 78);
   margin: 0;
 `;
 
 const Description = styled.p`
   font-size: 15px;
-  color: ${({ theme }) => theme.text_secondary};
+  color:rgb(8, 8, 8);
   margin: 0;
   line-height: 1.5;
 `;

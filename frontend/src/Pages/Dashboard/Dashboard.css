@@ -115,4 +115,6 @@
     width: 100%;
   }
 
-  
+  .column-header{
+    color:rgb(53, 33, 7);
+  }
