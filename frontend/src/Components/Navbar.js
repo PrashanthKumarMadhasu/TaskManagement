@@ -7,12 +7,12 @@ import Logout from "./Assets/logout.png"
 
 const Nav = styled.div`
   background-color: ${({ theme }) => theme.bg};
-  padding: 0 20px;
+  width:100%;
   height: 50px;
   display: flex;
   align-items: center;
   font-size: 1rem;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1000;
   color: white;

@@ -4,7 +4,7 @@ export const handleToast = (message, color) => {
     return toast(`${message}`, {
         style: {
             color: color,
-            background: "none",
+            background: "#ccf0ef",
             padding: "5px",
             borderRadius: "8px",
             margin: "50px 0 0 0",

@@ -14,6 +14,7 @@ const Container = styled.div`
   justify-content: center;
   padding: 22px 0px;
   overflow-y: scroll;
+  margin-top:50px;
 `;
 
 const Wrapper = styled.div`
