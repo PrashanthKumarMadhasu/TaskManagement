@@ -12,7 +12,7 @@ const postSchema = mongoose.Schema({
     trim: true,
   },
   photo: {
-    type: String, // URL of the photo stored in Cloudinary
+    type: String, 
     required: true,
   },
   createdAt: {

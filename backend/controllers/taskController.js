@@ -4,15 +4,14 @@ const Task = require('../models/Task');
 exports.addTask = async (req, res) => {
   try {
     const { name, description, status = 'pending' } = req.body;
-    console.log("Received task data:", { name, description, status });
-    // Validate input
+    // console.log("Received task data:", { name, description, status });
     if (!name || !description) {
       return res.status(400).json({ message: 'Name and description are required' });
     }
 
     // Create a new task linked to the authenticated user
     const newTask = new Task({
-      user: req.user.id, // Attach user ID from the authenticated user
+      user: req.user.id, 
       name,
       description,
       status,
@@ -29,7 +28,6 @@ exports.addTask = async (req, res) => {
 // Get all tasks for the authenticated user
 exports.getTasks = async (req, res) => {
   try {
-    // Find tasks only for the authenticated user
     const tasks = await Task.find({ user: req.user.id });
     return res.status(200).json({ tasks });
   } catch (err) {
@@ -48,7 +46,6 @@ exports.updateTaskStatus = async (req, res) => {
       return res.status(400).json({ message: 'Invalid status' });
     }
 
-    // Update task only if it belongs to the authenticated user
     const task = await Task.findOneAndUpdate(
       { _id: id, user: req.user.id },
       { status },
@@ -71,7 +68,6 @@ exports.deleteTask = async (req, res) => {
   const { id } = req.params;
 
   try {
-    // Delete task only if it belongs to the authenticated user
     const task = await Task.findOneAndDelete({ _id: id, user: req.user.id });
 
     if (!task) {

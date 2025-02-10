@@ -3,11 +3,11 @@ import { getPosts, addPost } from "../../api";
 import "./Feed.css";
 
 const Feed = () => {
-  const [posts, setPosts] = useState([]); // State for fetched posts
-  const [caption, setCaption] = useState(""); // State for caption input
-  const [photo, setPhoto] = useState(null); // State for selected photo
-  const [loading, setLoading] = useState(false); // Loading indicator
-  const token = localStorage.getItem("todo-app-token"); // Assuming the token is stored in localStorage
+  const [posts, setPosts] = useState([]); 
+  const [caption, setCaption] = useState(""); 
+  const [photo, setPhoto] = useState(null); 
+  const [loading, setLoading] = useState(false); 
+  const token = localStorage.getItem("todo-app-token"); 
   console.log("Token:", token);
 
   // Fetch posts from the backend
@@ -25,7 +25,7 @@ const Feed = () => {
 
   // Handle form submission for adding a post
   const handleAddPost = async (e) => {
-    e.preventDefault(); // Prevent form reload
+    e.preventDefault(); 
     if (!photo || !caption) {
       alert("Both photo and caption are required!");
       return;
@@ -34,20 +34,19 @@ const Feed = () => {
     const formData = new FormData();
     formData.append("photo", photo);
     formData.append("caption", caption);
-    setLoading(true); // Show loading while uploading
+    setLoading(true); 
     try {
       const response = await addPost(token, formData);
-      console.log("Post added successfully:", response.data);
-      setCaption(""); // Clear the caption input
-      setPhoto(null); // Clear the selected photo
-      fetchPosts(); // Refresh posts
+      setCaption(""); 
+      setPhoto(null); 
+      fetchPosts(); 
     } catch (error) {
       console.error(
         "Error adding post:",
         error.response?.data || error.message
       );
     } finally {
-      setLoading(false); // Hide loading
+      setLoading(false); 
     }
   };
 

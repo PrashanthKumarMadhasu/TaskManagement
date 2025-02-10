@@ -13,7 +13,6 @@ const otpSchema= new mongoose.Schema({
     
 },{timestamps:true})
 
-//define a function to send otp to email
 
 
 

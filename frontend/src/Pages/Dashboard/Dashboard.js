@@ -76,14 +76,12 @@ const Dashboard = () => {
 
     try {
       const res = await addTask(token, newTask);
-      console.log("Response from backend:", res); // Log the response
       if (res.data.success) {
         handleToast(`Task Added`, "green");
-        getAllTasks(); // Refresh task list
+        getAllTasks(); 
         setInputValues({ title: "", status: "todo", description: "" });
       }
     } catch (err) {
-      console.error("Error adding task:", err);
       handleToast(`Failed to Add Task`, "red");
     }
   };
@@ -92,9 +90,8 @@ const Dashboard = () => {
     const token = localStorage.getItem("todo-app-token");
     try {
       await updateTaskStatus(token, task_id, taskStatus);
-      getAllTasks(); // Fetch updated data
+      getAllTasks(); 
     } catch (error) {
-      console.error("Failed to update task status:", error);
       handleToast(`Failed to update task status`, "red");
     }
   };
@@ -104,7 +101,6 @@ const Dashboard = () => {
     const token = localStorage.getItem("todo-app-token");
     try {
       const res = await getTasks(token);
-      console.log("Tasks fetched:", res.data); // Debug log
       setTaskData(res.data.tasks || []);
     } catch (err) {
       console.error("Failed to fetch tasks:", err.response?.data || err);
@@ -119,7 +115,6 @@ const Dashboard = () => {
     try {
       const res = await deleteTask(token, taskId);
       if (res.data.success) {
-        // Remove task from taskData immediately, reflecting the delete action in the UI
         setTaskData((prevTasks) => prevTasks.filter((task) => task._id !== taskId));
         handleToast(`Task deleted successfully`, "green");
       } else {
@@ -134,13 +129,10 @@ const Dashboard = () => {
   const handleDragEnd = (result) => {
     const { destination, source, draggableId } = result;
 
-    // Ensure the drop is within the same list
     if (!destination) return;
 
-    const taskId = draggableId; // The draggableId should be the task's _id
+    const taskId = draggableId; 
     const newStatus = destination.droppableId;
-
-    // Call your updateTaskStatus function to change the status of the task
     changeTaskStatus(taskId, newStatus);
   };
 
@@ -151,14 +143,13 @@ const Dashboard = () => {
   const handleTask = () => {
     if (!inputValues.title.trim() || !inputValues.description.trim()) {
       handleToast("Title and Description are required", "red");
-      return; // Exit the function if validation fails
+      return; 
     }
     const newTask = {
-      name: inputValues.title, // Map 'title' from frontend to 'name' for the backend
+      name: inputValues.title, 
       description: inputValues.description,
       status: inputValues.status,
     };
-    console.log(`added task data ${JSON.stringify(newTask)}`);
     addNewTask(newTask);
   };
 
@@ -226,10 +217,10 @@ const Dashboard = () => {
                         {...provided.droppableProps}
                         style={{
                           ...provided.droppableProps.style,
-                          padding: "16px", // Add padding here
+                          padding: "16px", 
                           minHeight: "250px",
                           minWidth:"300px",
-                          backgroundColor:"" // Optional: Ensure the droppable area is visible even when empty
+                          backgroundColor:"" 
                         }}
                       >
                         {taskData
@@ -273,10 +264,10 @@ const Dashboard = () => {
                         {...provided.droppableProps}
                         style={{
                           ...provided.droppableProps.style,
-                          padding: "16px", // Add padding here
+                          padding: "16px", 
                           minHeight: "250px",
                           minWidth:"300px",
-                          backgroundColor:"" // Optional: Ensure the droppable area is visible even when empty
+                          backgroundColor:"" 
                         }}
                       >
                         {taskData
@@ -320,10 +311,10 @@ const Dashboard = () => {
                         {...provided.droppableProps}
                         style={{
                           ...provided.droppableProps.style,
-                          padding: "16px", // Add padding here
+                          padding: "16px",
                           minHeight: "250px",
                           minWidth:"300px",
-                          backgroundColor:"" // Optional: Ensure the droppable area is visible even when empty
+                          backgroundColor:"" 
                         }}
                       >
                         {taskData

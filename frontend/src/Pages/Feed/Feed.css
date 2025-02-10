@@ -1,6 +1,5 @@
 /* Feed.css */
 
-/* Feed page container */
 .feed-page {
     margin-top: 50px;
     display: flex;
@@ -13,16 +12,15 @@
     
   }
   
-  /* Post form container */
   .post-container {
     width: 40%;
-    margin-bottom: 10px; /* Space between the form and posts */
+    margin-bottom: 10px; 
     display: flex;
     justify-content: center;
     min-width: 500px;
   }
   
-  /* Form container */
+
   .form-container {
     width: 100%;
     padding: 0 20px 10px 20px;
@@ -30,8 +28,7 @@
     background-color: rgb(2, 22, 41);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   }
-  
-  /* Form title */
+
   .form-title {
     font-size: 22px;
     font-weight: bold;
@@ -40,14 +37,12 @@
     text-align: center;
   }
   
-  /* Input field container */
   .form-input {
     display: flex;
     margin-bottom: 16px;
     background-color: rgb(20, 48, 59);
   }
   
-  /* Text input field */
   .input-field {
     width: 100%;
     padding: 10px;
@@ -61,7 +56,7 @@
   .input-field::placeholder{
     color: #b9b4b4;
   }
-  /* File input field */
+
   .file-input {
     width: 100%;
     padding: 10px;
@@ -72,7 +67,6 @@
     color: #8b8282;
   }
 
-  /* Submit button */
   .submit-button {
     padding: 5px 15px;
     background-color: rgb(38, 90, 233);
@@ -99,18 +93,16 @@
     cursor: not-allowed;
   }
   
-  /* Posts container (grid layout for posts) */
   .feed-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 3 items per row */
+    grid-template-columns: repeat(4, 1fr); 
     gap: 20px;
     width: 100%;
-    overflow-x: auto; /* Make the container scrollable if content overflows */
+    overflow-x: auto; 
     padding: 10px;
     align-items: center;
   }
   
-  /* Individual post card */
   .post-card {
     padding: 16px;
     border: 1px solid #ccc;
@@ -119,14 +111,13 @@
     text-align: center;
     overflow: hidden;
     max-width: 250px;
-    height: 300px; /* Fixed height for the cards */
+    height: 300px; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
   }
   
-  /* Post image */
   .post-image {
     width: 200px;
     height: 200px;
@@ -135,7 +126,6 @@
     margin-bottom: 12px;
   }
   
-  /* Post caption */
   .post-caption {
     font-size: 18px;
     font-weight: bold;
@@ -143,7 +133,6 @@
     color: rgb(3, 41, 41);
   }
   
-  /* Post user information */
   .post-user {
     font-size: 16px;
     color: #055361;

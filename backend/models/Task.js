@@ -4,7 +4,7 @@ const taskSchema = mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
-    required: true // Tasks must be associated with a user
+    required: true 
   },
   name: {
     type: String,
@@ -19,7 +19,7 @@ const taskSchema = mongoose.Schema({
   status: {
     type: String,
     enum: ['pending', 'completed', 'done'],
-    default: 'pending' // Set default status to 'Pending'
+    default: 'pending' 
   },
   createdAt: {
     type: Date,
@@ -31,7 +31,6 @@ const taskSchema = mongoose.Schema({
   }
 });
 
-// Pre-save hook to update `updatedAt` on task modification
 taskSchema.pre('save', function(next) {
   this.updatedAt = Date.now();
   next();
